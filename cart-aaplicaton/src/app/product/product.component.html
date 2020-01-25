@@ -17,7 +17,7 @@
             <h3 class="title"><a href="#">{{item.name}}</a></h3>
             <div class="price">
                 ${{item.price}}
-                <span>${{item.price-(item.price/item.discount)}}</span>
+                <span>${{item.price-(item.price/item.discount)| number:'3.1-2'}}</span>
             </div>
             <a class="add-to-cart btn btn-warning" href="">ADD TO CART</a>
         </div>
