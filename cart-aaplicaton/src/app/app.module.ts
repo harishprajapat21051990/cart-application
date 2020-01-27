@@ -19,6 +19,8 @@ import { SortComponent } from './components/sort/sort.component';
 import { FilterComponent } from './components/filter/filter.component';
 
 import { SortByPipe } from './shared/pipes/sortBy/sort-by.pipe';
+import { ShoppingPageContainerComponent } from './shopping-page-container/shopping-page-container.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { SortByPipe } from './shared/pipes/sortBy/sort-by.pipe';
     CartIconComponent,
     SortComponent,
     FilterComponent,
-    FooterComponent
+    FooterComponent,
+    ShoppingPageContainerComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
