@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Options } from 'ng5-slider';
 import {ProductService} from '../shared/services/product/product.service';
 
 @Component({
@@ -12,6 +13,11 @@ export class ShoppingListComponent implements OnInit {
   keyName: String;
   productDetails: any = [];
   asc:boolean=true;
+  value: number = 100;
+  options: Options = {
+    floor: 100,
+    ceil: 10000
+  };
 
   constructor(private prodService:ProductService) { }
 
@@ -22,10 +28,12 @@ export class ShoppingListComponent implements OnInit {
     });  
   }
 
-  
   getSortByKey(objVal:any) {
     this.keyName = objVal.keyName;
     this.asc = objVal.asc;
   }
 
+  filterProductList(value){
+    console.log(value)
+  }
 }

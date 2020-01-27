@@ -7,7 +7,12 @@
   </div>
 </div>
 <div class="row d-flex">
-  <div class="col-2 col-sm-2 col-md-2 col-lg-2 outlineCol d-none d-sm-flex"></div>
+  <div class="col-2 col-sm-2 col-md-2 col-lg-2 outlineCol d-none d-sm-flex">
+    <ng5-slider class="slider-container" [(value)]="value" [options]="options" (valueChange)="filterProductList($event)"></ng5-slider>
+    <div class="btn-container">
+      <button class="btn btn-primary">Apply</button>
+    </div>
+  </div>
   <div class="col-12 col-sm-10 col-md-10 col-lg-10">
     <div class="row">
       <div class="col-6 col-md-3 col-sm-3 col-lg-3 outlineCol" *ngFor="let item of productDetails | SortBy:keyName:asc;let i = index">
