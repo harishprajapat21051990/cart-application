@@ -1,9 +1,12 @@
-.f-20{
- font-size: 20px;
-}
+
 .sort-filter{
 	cursor: pointer;
 }
 .active-filter{
 	border-bottom: 2px solid #4268ea;
+}
+.searchInput:focus{
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
 }

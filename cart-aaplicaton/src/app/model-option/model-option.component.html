@@ -7,22 +7,22 @@
       </div>
       <div class="modal-body">
         <div class="custom-control custom-radio custom-control-block">
-          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" (change)="optionSelected('price',false);">
+          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" (change)="sortObj.keyName='price';sortObj.asc=false;">
           <label class="custom-control-label" for="customRadioInline1"><b>Price -- High to Low</b></label>
         </div>
         <div class="custom-control custom-radio custom-control-block">
-          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" (change)="optionSelected('price',true);">
+          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" (change)="sortObj.keyName='price';sortObj.asc=true;">
           <label class="custom-control-label" for="customRadioInline2"><b>Price -- Low to High</b> </label>
         </div>
         <div class="custom-control custom-radio custom-control-block">
-          <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" (change)="optionSelected('discount',true);">
+          <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" (change)="sortObj.keyName='discount';sortObj.asc=true;">
           <label class="custom-control-label" for="customRadioInline3"><b>Discount</b> </label>
         </div>
       </div>
       
       <div class="row b-flex">
         <div class="col-6 text-center p-3 outlineCol" data-dismiss="modal"><h5>Cancel</h5></div>
-        <div class="col-6 text-center p-3 outlineCol" data-dismiss="modal"><h5>Apply</h5></div>
+        <div class="col-6 text-center p-3 outlineCol" (click)="optionSelected(sortObj.keyName,sortObj.asc)"><h5>Apply</h5></div>
       </div>
     </div>
   </div>
