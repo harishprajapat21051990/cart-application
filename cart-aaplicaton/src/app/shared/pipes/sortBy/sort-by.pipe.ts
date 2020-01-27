@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'valueSortBy'
+  name: 'SortBy'
 })
-export class ValueSortByPipe implements PipeTransform {
+export class SortByPipe implements PipeTransform {
 
     transform(array: any, field: string,asc:boolean): any[] {
         if (!Array.isArray(array)) {

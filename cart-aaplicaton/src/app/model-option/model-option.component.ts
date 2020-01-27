@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Observable } from "rxjs";
-import {PorductFetchService} from '../porduct-fetch.service';
+import {ProductService} from '../shared/services/product/product.service';
 
 @Component({
   selector: 'app-model-option',
@@ -11,7 +11,7 @@ export class ModelOptionComponent implements OnInit {
  
   model : Observable<any>;
   @Input() data:any;
-  constructor(private prodService:PorductFetchService) {
+  constructor(private prodService:ProductService) {
     this.model = this.prodService.getModel();
    }
 
