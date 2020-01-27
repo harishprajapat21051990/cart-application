@@ -4,31 +4,38 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'SortBy'
 })
 export class SortByPipe implements PipeTransform {
-
-    transform(array: any, field: string,asc:boolean): any[] {
-        if (!Array.isArray(array)) {
-          return;
+  transform(array: any, keyName: string, orderBy:boolean, minValue: number, maxValue: number): any[] {
+    let filteredArray = [];
+    if (!Array.isArray(array)) {
+      return;
+    }
+    if(minValue && maxValue){
+      filteredArray = array.filter((item) => {
+        if((item.price >= minValue) && (item.price <= maxValue)){
+          return item;
         }
-        array.sort((a: any, b: any) => {
-            if(asc){
-          if (a[field] < b[field]) {
+      });
+    } else {
+      array.sort((a: any, b: any) => {
+        if(orderBy){
+          if (a[keyName] < b[keyName]) {
             return -1;
-          } else if (a[field] > b[field]) {
+          } else if (a[keyName] > b[keyName]) {
             return 1;
           } else {
             return 0;
           }
-        }else{
-            if (a[field] >b[field]) {
-                return -1;
-              } else if (a[field] < b[field]) {
-                return 1;
-              } else {
-                return 0;
-              } 
+        } else {
+          if (a[keyName] >b[keyName]) {
+            return -1;
+          } else if (a[keyName] < b[keyName]) {
+            return 1;
+          } else {
+            return 0;
+          } 
         }
-        });
-        return array;
-      }
-
+      });
+    }    
+    return filteredArray.length ? filteredArray : array;
+  }
 }

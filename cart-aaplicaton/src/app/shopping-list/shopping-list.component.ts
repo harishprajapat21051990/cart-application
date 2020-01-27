@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Options } from 'ng5-slider';
 import {ProductService} from '../shared/services/product/product.service';
 
 @Component({
@@ -10,30 +9,34 @@ import {ProductService} from '../shared/services/product/product.service';
 
 export class ShoppingListComponent implements OnInit {
   
-  keyName: String;
   productDetails: any = [];
-  asc:boolean=true;
-  value: number = 100;
-  options: Options = {
-    floor: 100,
-    ceil: 10000
+  filters: any = {
+    name: null,
+    orderBy: false,
+    price: {
+      min: 0,
+      max: 0
+    }
   };
-
+  asc:boolean=true;
+  
   constructor(private prodService:ProductService) { }
 
   ngOnInit() {
-    this.prodService.getProductDetails().subscribe(data => {
-      this.productDetails = data;
-      this.getSortByKey({keyName: 'price', asc: false});
+    this.prodService.getProductDetails().subscribe(prods => {
+      this.productDetails = prods;
+      this.toggleSort({name: 'price', orderBy: false});
     });  
   }
 
-  getSortByKey(objVal:any) {
-    this.keyName = objVal.keyName;
-    this.asc = objVal.asc;
+  openModal(){
+    this.prodService.setModal('Filter');
   }
 
-  filterProductList(value){
-    console.log(value)
+  toggleSort(obj:any) {
+    this.filters.name = obj.name;
+    this.filters.orderBy = obj.orderBy;
+    this.filters.price.min = obj.min;
+    this.filters.price.max = obj.max;
   }
 }

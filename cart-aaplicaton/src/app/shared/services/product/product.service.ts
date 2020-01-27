@@ -8,7 +8,7 @@ import { BehaviorSubject, Subject, Observable } from "rxjs";
 
 export class ProductService {
 
-  btnVal:string;
+  modalType:string;
   cart = [];
   totalItems = new BehaviorSubject<any[]>([]);
 
@@ -18,15 +18,15 @@ export class ProductService {
     return this.http.get("https://api.myjson.com/bins/qzuzi");
   }
 
-  getModel(btnName:string){
-    this.btnVal = btnName;
+  setModal(modalType:string){
+    this.modalType = modalType;
   }
   
-  sendModel(btnName:string){
-    return this.btnVal;
+  getModal(btnName:string){
+    return this.modalType;
   }
 
-  getCartItems(){
+  getCartCount(){
     return this.totalItems.asObservable();
   }
  

@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
-import { ModelOptionComponent } from './model-option/model-option.component';
+import { ModalComponent } from './shared/modal/modal.component';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -28,7 +28,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     HeaderComponent,
     ProductComponent,
     ShoppingListComponent,
-    ModelOptionComponent,
+    ModalComponent,
     SortByPipe,
     SearchComponent,
     CartIconComponent,
@@ -46,6 +46,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     Ng5SliderModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[FilterComponent]
 })
 export class AppModule { }

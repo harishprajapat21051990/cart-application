@@ -7,18 +7,19 @@ import {ProductService} from '../../shared/services/product/product.service';
 })
 export class SortComponent{
 
-  @Output() sortVal = new EventEmitter<{keyName:string,asc:boolean}>();
+  @Output() sortItem = new EventEmitter<{name:string, orderBy:boolean}>();
 
-  constructor(private prodServ:ProductService) { }
+  constructor(private prodService:ProductService) { }
 
   ngOnInit() {
   }
 
-  optionSelected(keyName:string,asc:boolean) {
-    this.sortVal.emit({keyName,asc});
+  sortFilter(name:string, orderBy:boolean) {
+    this.sortItem.emit({name, orderBy});
   }
-  sendBtnVal(btnVal:string){
-    this.prodServ.getModel('sort');
+  
+  openModal(){
+    this.prodService.setModal('Sort');
   }
 
   activeSortLabel(event){
