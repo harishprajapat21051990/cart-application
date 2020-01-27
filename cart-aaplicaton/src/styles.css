@@ -10,10 +10,7 @@
   body{
     background-color: #f1f3f6 !important;
   }
-  .pointer{
-	  cursor: pointer;
-  }
   ::-webkit-input-placeholder {
-	color: #fff;
-}
+	 color: #fff;
+  }
   

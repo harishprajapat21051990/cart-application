@@ -1,14 +1,14 @@
 <div class="desktop-view d-none d-sm-flex">
   <div class="m-4 f-20">
-    Sort
+    <i class="fa fa-sort mr-1"></i>Sort
   </div>
-  <div class="m-4 pointer" (click)="optionSelected('price',false)">
+  <div class="m-4 sort-filter active-filter" (click)="optionSelected('price',false);activeSortLabel($event)">
     Price -- High Low
   </div>
-  <div class="m-4 pointer" (click)="optionSelected('price',true)">
+  <div class="m-4 sort-filter" (click)="optionSelected('price',true, $event);activeSortLabel($event)">
     Price -- Low High
   </div>
-  <div class="m-4 pointer" (click)="optionSelected('discount',true)">
+  <div class="m-4 sort-filter" (click)="optionSelected('discount',true, $event);activeSortLabel($event)">
     Discount
   </div>
 </div>

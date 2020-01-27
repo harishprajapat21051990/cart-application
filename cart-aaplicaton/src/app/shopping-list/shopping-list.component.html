@@ -1,11 +1,8 @@
 <div class="row d-flex">
-  <div class="col-6 col-sm-10 col-md-10 col-lg-10 d-flex d-sm-none outlineCol">
-    <app-sort  (sortVal)="getSortByKey($event)" ></app-sort>
-  </div>
-  <div class="col-6 col-sm-2 col-md-2 col-lg-2 outlineCol">
+  <div class="col-6 col-sm-6 col-md-2 col-lg-2 outlineCol">
     <app-filter></app-filter>
   </div>
-  <div class="col-10 col-sm-10 col-md-10 col-lg-10 d-none d-sm-flex">
+  <div class="col-6 col-sm-6 col-md-10 col-lg-10">
     <app-sort  (sortVal)="getSortByKey($event)" ></app-sort>
   </div>
 </div>

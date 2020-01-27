@@ -18,6 +18,7 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit() {
     this.prodService.getProductDetails().subscribe(data => {
       this.productDetails = data;
+      this.getSortByKey({keyName: 'price', asc: false});
     });  
   }
 

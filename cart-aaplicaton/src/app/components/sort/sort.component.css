@@ -1,3 +1,9 @@
 .f-20{
  font-size: 20px;
 }
+.sort-filter{
+	cursor: pointer;
+}
+.active-filter{
+	border-bottom: 2px solid #4268ea;
+}

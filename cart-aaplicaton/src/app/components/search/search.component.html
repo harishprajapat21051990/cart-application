@@ -1,2 +1,2 @@
-<input type="text" placeholder="Search.." class="searchInput col-8 col-sm-10" name="search">
-<span class="text-light "><i class="fa fa-search"></i></span>
+<input type="text" placeholder="Search.." class="searchInput col-8 col-sm-10" name="search" [(ngModel)]="searchString">
+<span class="text-light" (click)="searchProduct()"><i class="fa fa-search"></i></span>
