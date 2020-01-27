@@ -7,17 +7,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SortComponent{
 
-  keyName: String = 'Price';
-  @Output() sortItem = new EventEmitter();
+  @Output() sortVal = new EventEmitter<{keyName:string,asc:boolean}>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  sortItemBy() {
-  	console.log(this.keyName);
-    this.sortItem.emit(this.keyName);
+  optionSelected(keyName:string,asc:boolean) {
+    this.sortVal.emit({keyName,asc});
   }
 
 }

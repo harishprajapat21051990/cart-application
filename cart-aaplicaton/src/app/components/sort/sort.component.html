@@ -2,13 +2,13 @@
   <div class="m-4 f-20">
     Sort
   </div>
-  <div class="m-4 pointer" (click)="sortItem='price';asc=false">
+  <div class="m-4 pointer" (click)="optionSelected('price',false)">
     Price -- High Low
   </div>
-  <div class="m-4 pointer" (click)="sortItem='price';asc=true">
+  <div class="m-4 pointer" (click)="optionSelected('price',true)">
     Price -- Low High
   </div>
-  <div class="m-4 pointer" (click)="sortItem='discount'">
+  <div class="m-4 pointer" (click)="optionSelected('discount',true)">
     Discount
   </div>
 </div>

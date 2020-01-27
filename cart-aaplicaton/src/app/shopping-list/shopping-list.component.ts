@@ -11,6 +11,7 @@ export class ShoppingListComponent implements OnInit {
   
   keyName: String;
   productDetails: any = [];
+  asc:boolean=true;
 
   constructor(private prodService:ProductService) { }
 
@@ -20,9 +21,10 @@ export class ShoppingListComponent implements OnInit {
     });  
   }
 
-  getSortByKey(keyname){
-    console.log("===>",keyname);
-    this.keyName = keyname;
+  
+  getSortByKey(objVal:any) {
+    this.keyName = objVal.keyName;
+    this.asc = objVal.asc;
   }
 
   optionSelected(val:boolean){
