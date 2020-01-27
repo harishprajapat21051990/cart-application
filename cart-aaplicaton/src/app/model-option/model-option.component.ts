@@ -12,15 +12,13 @@ export class ModelOptionComponent implements OnInit {
   sortObj:any={};
   @Input() data:any;
   @Output() sortVal = new EventEmitter<{keyName:string,asc:boolean}>();
-  constructor(private prodService:ProductService) {
-   }
+  
+  constructor(private prodService:ProductService) { }
 
   ngOnInit() {
   }
+
   optionSelected(keyName:string,asc:boolean) {
     this.sortVal.emit({keyName,asc});
   }
-  ngOnChanges() {
-  }
-
 }

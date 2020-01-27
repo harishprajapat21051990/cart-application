@@ -5,10 +5,10 @@
   <div class="m-4 sort-filter active-filter" (click)="optionSelected('price',false);activeSortLabel($event)">
     Price -- High to Low
   </div>
-  <div class="m-4 sort-filter" (click)="optionSelected('price',true, $event);activeSortLabel($event)">
+  <div class="m-4 sort-filter" (click)="optionSelected('price', true);activeSortLabel($event)">
     Price -- Low to High
   </div>
-  <div class="m-4 sort-filter" (click)="optionSelected('discount',true, $event);activeSortLabel($event)">
+  <div class="m-4 sort-filter" (click)="optionSelected('discount', false);activeSortLabel($event)">
     Discount
   </div>
 </div>
