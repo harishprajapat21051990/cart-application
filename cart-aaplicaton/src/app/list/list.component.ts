@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PorductFetchService} from '../porduct-fetch.service';
 
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -13,14 +14,16 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.prodService.getProductDetails()
     .subscribe(data => {
-      // for (const d of (data as any)) {
-      //   this.smartphone.push({
-      //     name: d.name,
-      //     price: d.price
-      //   });
       console.log(data);
       this.productDetails = data;
     });
+    
   }
-
+  optionSelected(val:boolean){
+    if(val){
+      this.prodService.provideModelValue({title:'sort',content:'value1'});
+    }else{
+      this.prodService.provideModelValue({title:'filter',content:'value2'});
+    }
+  }
 }

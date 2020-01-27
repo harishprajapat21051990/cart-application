@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModelOptionComponent } from './model-option/model-option.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProductComponent,
-    ListComponent
+    ListComponent,
+    ModelOptionComponent
   ],
   imports: [
     BrowserModule,
