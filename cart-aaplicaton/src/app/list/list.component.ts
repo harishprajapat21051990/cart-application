@@ -9,6 +9,7 @@ import {PorductFetchService} from '../porduct-fetch.service';
 })
 export class ListComponent implements OnInit {
   productDetails: any = [];
+  keyName:string='price';
   constructor(private prodService:PorductFetchService) { }
 
   ngOnInit() {

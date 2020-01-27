@@ -8,6 +8,7 @@ import { ProductComponent } from './product/product.component';
 import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModelOptionComponent } from './model-option/model-option.component';
+import { ValueSortByPipe } from './value-sort-by.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ModelOptionComponent } from './model-option/model-option.component';
     HeaderComponent,
     ProductComponent,
     ListComponent,
-    ModelOptionComponent
+    ModelOptionComponent,
+    ValueSortByPipe
   ],
   imports: [
     BrowserModule,
