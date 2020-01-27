@@ -12,6 +12,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ModelOptionComponent } from './model-option/model-option.component';
 
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { CartIconComponent } from './components/cart-icon/cart-icon.component';
 import { SortComponent } from './components/sort/sort.component';
@@ -30,7 +31,8 @@ import { SortByPipe } from './shared/pipes/sortBy/sort-by.pipe';
     SearchComponent,
     CartIconComponent,
     SortComponent,
-    FilterComponent
+    FilterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

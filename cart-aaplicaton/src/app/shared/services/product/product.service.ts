@@ -18,11 +18,10 @@ export class ProductService {
     return this.http.get("https://api.myjson.com/bins/qzuzi");
   }
 
- 
-
   getModel(btnName:string){
     this.btnVal = btnName;
   }
+  
   sendModel(btnName:string){
     return this.btnVal;
   }
