@@ -1,5 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { Observable } from "rxjs";
+import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
 import {ProductService} from '../shared/services/product/product.service';
 
 @Component({
@@ -9,16 +8,18 @@ import {ProductService} from '../shared/services/product/product.service';
 })
 export class ModelOptionComponent implements OnInit {
  
-  model : Observable<any>;
+  model : string;
   @Input() data:any;
+  @Output() sortVal = new EventEmitter<{keyName:string,asc:boolean}>();
   constructor(private prodService:ProductService) {
-    this.model = this.prodService.getModel();
    }
 
   ngOnInit() {
   }
+  optionSelected(keyName:string,asc:boolean) {
+    this.sortVal.emit({keyName,asc});
+  }
   ngOnChanges() {
-    this.model = this.prodService.getModel();
   }
 
 }

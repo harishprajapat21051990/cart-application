@@ -14,3 +14,9 @@
 	 color: #fff;
   }
   
+  .outlineCol{
+    border:1px solid#e2e3e4;
+}
+.pointer{
+  cursor: pointer;
+}

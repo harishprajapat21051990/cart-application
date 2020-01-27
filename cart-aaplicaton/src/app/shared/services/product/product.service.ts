@@ -8,8 +8,7 @@ import { BehaviorSubject, Subject, Observable } from "rxjs";
 
 export class ProductService {
 
-  modelObj:any;
-  mobelSubject = new BehaviorSubject<any>(this.modelObj);
+  btnVal:string;
   cart = [];
   totalItems = new BehaviorSubject<any[]>([]);
 
@@ -19,19 +18,19 @@ export class ProductService {
     return this.http.get("https://api.myjson.com/bins/qzuzi");
   }
 
-  provideModelValue(data:any){
-    this.modelObj=data;
-    this.mobelSubject.next(data);
-  }
+ 
 
-  getModel():Observable<any>{
-    return this.mobelSubject.asObservable();
+  getModel(btnName:string){
+    this.btnVal = btnName;
+  }
+  sendModel(btnName:string){
+    return this.btnVal;
   }
 
   getCartItems(){
     return this.totalItems.asObservable();
   }
-
+ 
   addItemToCart(item){
     this.cart.push(item);
     this.totalItems.next(this.cart);

@@ -3,17 +3,17 @@
     <i class="fa fa-sort mr-1"></i>Sort
   </div>
   <div class="m-4 sort-filter active-filter" (click)="optionSelected('price',false);activeSortLabel($event)">
-    Price -- High Low
+    Price -- High to Low
   </div>
   <div class="m-4 sort-filter" (click)="optionSelected('price',true, $event);activeSortLabel($event)">
-    Price -- Low High
+    Price -- Low to High
   </div>
   <div class="m-4 sort-filter" (click)="optionSelected('discount',true, $event);activeSortLabel($event)">
     Discount
   </div>
 </div>
 <div class="mobile-view d-flex d-sm-none">
-  <div class="m-4 f-20" data-toggle="modal" data-target=".bd-modal-sm" (click)="optionSelected(true)">
+  <div class="m-4 f-20" data-toggle="modal" data-target=".bd-modal-sm" (click)="sendBtnVal('sort')">
     <i class="fa fa-sort mr-1"></i>Sort
   </div>
 </div>

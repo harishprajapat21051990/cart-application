@@ -28,11 +28,4 @@ export class ShoppingListComponent implements OnInit {
     this.asc = objVal.asc;
   }
 
-  optionSelected(val:boolean){
-    if(val){
-      this.prodService.provideModelValue({title:'sort',content:'value1'});
-    }else{
-      this.prodService.provideModelValue({title:'filter',content:'value2'});
-    }
-  }
 }

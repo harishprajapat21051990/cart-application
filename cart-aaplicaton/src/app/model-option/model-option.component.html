@@ -1,16 +1,28 @@
 <div class="modal fade bd-modal-sm" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">{{model|json}}</h5>
-        
+    <div class="modal-content" *ngIf="prodService.sendModel()=='sort'">
+      <div class="modal-header" >
+        <h4 class="modal-title" id="exampleModalLongTitle">Sort</h4>
+       
       </div>
       <div class="modal-body">
-        {{model.content}}
+        <div class="custom-control custom-radio custom-control-block">
+          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" (change)="optionSelected('price',false);">
+          <label class="custom-control-label" for="customRadioInline1"><b>Price -- High to Low</b></label>
+        </div>
+        <div class="custom-control custom-radio custom-control-block">
+          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" (change)="optionSelected('price',true);">
+          <label class="custom-control-label" for="customRadioInline2"><b>Price -- Low to High</b> </label>
+        </div>
+        <div class="custom-control custom-radio custom-control-block">
+          <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" (change)="optionSelected('discount',true);">
+          <label class="custom-control-label" for="customRadioInline3"><b>Discount</b> </label>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      
+      <div class="row b-flex">
+        <div class="col-6 text-center p-3 outlineCol" data-dismiss="modal"><h5>Cancel</h5></div>
+        <div class="col-6 text-center p-3 outlineCol" data-dismiss="modal"><h5>Apply</h5></div>
       </div>
     </div>
   </div>
