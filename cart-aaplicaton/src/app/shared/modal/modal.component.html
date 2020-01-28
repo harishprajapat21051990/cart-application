@@ -2,10 +2,10 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header" >
-        <h5 class="modal-title">{{this.prodService.getModal()}} Options</h5>
+        <h5 class="modal-title">{{modalName}} Options</h5>
       </div>
       <div class="modal-body">
-        <div *ngIf="this.prodService.getModal() === 'Sort'">
+        <div *ngIf="modalName=== 'Sort'">
           <div class="custom-control custom-radio custom-control-block">
           <input type="radio" id="sort-by-high-price" name="itemSortBy" class="custom-control-input" (change)="filters.name='price';filters.orderBy=false;">
           <label class="custom-control-label" for="sort-by-high-price"><b>Price -- High to Low</b></label>
@@ -19,7 +19,7 @@
           <label class="custom-control-label" for="sort-by-discount"><b>Discount</b> </label>
           </div>
         </div>
-        <div *ngIf="this.prodService.getModal() === 'Filter'">
+        <div *ngIf="modalName=== 'Filter'">
           <app-filter (sortItem)="getMinMaxPrice($event)"></app-filter>
         </div>
       </div>

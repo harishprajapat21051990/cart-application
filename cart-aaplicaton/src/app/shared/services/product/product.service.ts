@@ -11,6 +11,7 @@ export class ProductService {
   modalType:string;
   cart = [];
   totalItems = new BehaviorSubject<any[]>([]);
+  getModal = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
@@ -19,12 +20,10 @@ export class ProductService {
   }
 
   setModal(modalType:string){
-    this.modalType = modalType;
+    this.getModal.next(modalType);
   }
   
-  getModal(btnName:string){
-    return this.modalType;
-  }
+ 
 
   getCartCount(){
     return this.totalItems.asObservable();

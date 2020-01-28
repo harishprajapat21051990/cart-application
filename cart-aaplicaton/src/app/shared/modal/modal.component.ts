@@ -1,5 +1,6 @@
-import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit,OnDestroy,Input,EventEmitter,Output } from '@angular/core';
 import {ProductService} from '../services/product/product.service';
+import { Subscription }   from 'rxjs';
 
 @Component({
   selector: 'app-modal',
@@ -7,7 +8,8 @@ import {ProductService} from '../services/product/product.service';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
- 
+ modalName:string;
+ subscription: Subscription;
  filters= {
   name: null,
   orderBy: false,
@@ -18,7 +20,11 @@ export class ModalComponent implements OnInit {
  };
   @Output() sortItem = new EventEmitter<{name:string, orderBy:boolean, minValue:number, maxValue:number}>();
   
-  constructor(private prodService:ProductService) { }
+  constructor(private prodService:ProductService) {
+    this.subscription = prodService.getModal.subscribe((value) => { 
+      this.modalName = value; 
+    });
+   }
 
   ngOnInit() {
   }
@@ -29,5 +35,9 @@ export class ModalComponent implements OnInit {
 
   getMinMaxPrice(minValue:number, maxValue:number){
     console.log(minValue, maxValue)
+  }
+  ngOnDestroy() {
+    // prevent memory leak when component destroyed
+    this.subscription.unsubscribe();
   }  
 }
