@@ -8,11 +8,11 @@ import { Options } from 'ng5-slider';
 })
 export class FilterComponent implements OnInit {
 
-  minValue: number = 100;
-  maxValue: number = 10000;
+  minValue: number = 10;
+  maxValue: number = 1000;
   options: Options = {
-    floor: 100,
-    ceil: 10000
+    floor: 10,
+    ceil: 1000
   };
   @Output() sortItem = new EventEmitter<{min:number, max:number}>();
 

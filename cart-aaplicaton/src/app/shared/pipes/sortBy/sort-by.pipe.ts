@@ -15,8 +15,9 @@ export class SortByPipe implements PipeTransform {
           return item;
         }
       });
-    } else {
-      array.sort((a: any, b: any) => {
+    } 
+    if(keyName && orderBy) {
+      filteredArray.sort((a: any, b: any) => {
         if(orderBy){
           if (a[keyName] < b[keyName]) {
             return -1;

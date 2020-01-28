@@ -14,8 +14,8 @@ export class ShoppingListComponent implements OnInit {
     name: null,
     orderBy: false,
     price: {
-      min: 0,
-      max: 0
+      min: 10,
+      max: 1000
     }
   };
   asc:boolean=true;
@@ -25,7 +25,7 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit() {
     this.prodService.getProductDetails().subscribe(prods => {
       this.productDetails = prods;
-      this.toggleSort({name: 'price', orderBy: false});
+      this.toggleSort({name: 'price', orderBy: false,min:10,max:1000});
     });  
   }
 
@@ -34,9 +34,9 @@ export class ShoppingListComponent implements OnInit {
   }
 
   toggleSort(obj:any) {
-    this.filters.name = obj.name;
-    this.filters.orderBy = obj.orderBy;
-    this.filters.price.min = obj.min;
-    this.filters.price.max = obj.max;
+    this.filters.name = obj.name?obj.name:this.filters.name;
+    this.filters.orderBy = (obj.orderBy!==undefined)?obj.orderBy:this.filters.orderBy;
+    this.filters.price.min = obj.min?obj.min:this.filters.price.min;
+    this.filters.price.max = obj.max?obj.max:this.filters.price.max;
   }
 }
