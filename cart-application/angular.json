@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cart-aaplicaton": {
+    "cart-application": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cart-aaplicaton",
+            "outputPath": "dist/cart-application",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cart-aaplicaton:build"
+            "browserTarget": "cart-application:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cart-aaplicaton:build:production"
+              "browserTarget": "cart-application:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cart-aaplicaton:build"
+            "browserTarget": "cart-application:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "cart-aaplicaton-e2e": {
+    "cart-application-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cart-aaplicaton:serve"
+            "devServerTarget": "cart-application:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cart-aaplicaton:serve:production"
+              "devServerTarget": "cart-application:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "cart-aaplicaton"
+  "defaultProject": "cart-application"
 }
